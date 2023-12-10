@@ -29,7 +29,7 @@ class Squat:
         self.count_label.pack(pady=10)
 
         # Status Label
-        self.status_label = ttk.Label(self.root, text="Status: Fix Form", font=("Arial", 18))
+        self.status_label = ttk.Label(self.root, text="Status: Do Squat", font=("Arial", 18))
         self.status_label.pack(pady=10)
 
         button_frame = ttk.Frame(self.root)
@@ -67,9 +67,8 @@ class Squat:
 
                 if self.form == 1:
                         if right_leg >= 160 and left_leg >= 160:
-                            self.feedback = "You are Standing. Do Squat"
+                            self.feedback = "Do Squat"
                         elif right_leg < 80 and left_leg < 80:
-                            self.feedback = "Incorrect form. Try to maintain 90 degree while squatting. Stand up and do again"
                             self.error += 1
                             self.form = 0
                         elif right_leg >= 80 and right_leg<=100 and left_leg >= 80 and left_leg<=100:
@@ -77,7 +76,6 @@ class Squat:
                             self.count += 1
                             self.form = 0
                 else:
-                    self.feedback = "Stand Straight to start doing Squat"
                     self.form = 0
                 # Update labels
                 self.count_label.config(text=f"Count: {int(self.count)}")
