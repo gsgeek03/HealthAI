@@ -22,7 +22,7 @@ class InsightsPage:
 
     def fetch_insights(self):
         data=self.data
-        openai.api_key = "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"# Replace with your actual OpenAI API key
+        openai.api_key = ""# Replace with your actual OpenAI API key
         data_json = json.dumps(data)
         user_message = {"role": "user", "content": data_json}
         messages = [
